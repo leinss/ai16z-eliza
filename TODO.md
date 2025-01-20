@@ -32,9 +32,10 @@ then the user of the client ui should be shown in the left panel all created age
     - `/:agentId/whisper`
   - new search params with origin
 - `client-direct` uses api-keys for requests made to backend if not coming from same origin
+- client deploy
 
 ## TBD
 
-- deployment
+
 - separation of agent api-key and ui user api-key
 - one room creation per agent
