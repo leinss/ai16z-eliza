@@ -18,6 +18,7 @@ import type { TeeLogQuery, TeeLogService } from "@elizaos/plugin-tee-log";
 import { REST, Routes } from "discord.js";
 import type { DirectClient } from ".";
 import { validateUuid } from "@elizaos/core";
+import authenticate from "./authentication";
 
 interface UUIDParams {
     agentId: UUID;
@@ -64,6 +65,7 @@ export function createApiRouter(
             limit: getEnvVariable("EXPRESS_MAX_PAYLOAD") || "100kb",
         })
     );
+    router.use(authenticate);
 
     router.get("/", (req, res) => {
         res.send("Welcome, this is the REST API!");
